@@ -20,6 +20,9 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->string('facebook_id')->nullable();
+            $table->tinyInteger('expire')->default('0');
+            $table->date('subscription_expiry')->nullable();
             $table->timestamps();
         });
     }
